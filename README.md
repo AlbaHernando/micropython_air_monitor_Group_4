@@ -5,7 +5,7 @@
 * [2. Hardware Components](#2-hardware-components)
 * [3. Software description](#3-software-description)
 * [4. Instructions and photos](#4-instructions-and-photos)
-* [5. References and tools]()
+* [5. References and tools](#5-references-and-tools)
 
 ## Project 1: ESP32 Indoor Air Quality Monitor
 Course: BPA-DE2 (Digital Electronics) 2025/26 Team Members:
