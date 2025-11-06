@@ -13,9 +13,11 @@ Course: BPA-DE2 (Digital Electronics) 2025/26 Team Members:
 
 # 1. Project Overview
 **Problem Statement**
+
 Indoor Air Quality (IAQ) is a critical factor influencing human health, comfort, and productivity. Pollutants such as particulate matter (PM2.5/PM10), high levels of Carbon Dioxide (CO2), and volatile organic compounds (VOCs) can accumulate in poorly ventilated indoor environments like homes, schools, and offices. Many of these spaces lack real-time, accessible monitoring, leaving occupants unaware of potential health risks.
 
 **Proposed Solution**
+
 This project aims to design and build a cost-effective, real-time Indoor Air Quality monitoring system using an ESP32 FireBeetle microcontroller programmed in MicroPython.
 
 The system will:
