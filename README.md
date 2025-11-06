@@ -42,6 +42,12 @@ The system will:
 ## 2. Hardware Components
 Describe your implementation and include block or circuit diagram(s).
 The following components have been selected to build the prototype.
+![cidlo-teploty-a-vlhkosti-dht11-modul-iduino-se052](https://github.com/user-attachments/assets/8d166d5f-bcfa-4903-a3b8-f78612e0fcab)
+![SN-MQ135-MOD (4)](https://github.com/user-attachments/assets/5fb1558b-7a07-4ee1-953f-73e52e20f149)
+![m364](https://github.com/user-attachments/assets/b75f6d39-dc76-4b6f-af72-46ca9d6a93cd)
+
+
+
 
 ## 3. Software description
 Include flowcharts of your algorithm(s) and direct links to the source files. Present the modules you used in the project.
