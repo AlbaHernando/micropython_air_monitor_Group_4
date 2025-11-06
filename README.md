@@ -1,5 +1,4 @@
-## micropython_air_monitor_Group_4
-BPA-DE2 Project: An ESP32-based indoor air quality monitor programmed in MicroPython.
+## Indoor air quality monitoring system
 
 * [Project 1: ESP32 Indoor Air Quality Monitor](#project-1-esp32-indoor-air-quality-monitor)
 * [1. Project Overview]()
