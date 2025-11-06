@@ -6,11 +6,11 @@ BPA-DE2 Project: An ESP32-based indoor air quality monitor programmed in MicroPy
 ## Project 1: ESP32 Indoor Air Quality Monitor
 Course: BPA-DE2 (Digital Electronics) 2025/26 Team Members:
 
-- Xabier Asla
+- Xabier Asla    (responsible for ...)
 
-- Alba Hernando
+- Alba Hernando  (responsible for ...)
 
-- Pablo Vicente
+- Pablo Vicente  (responsible for ...)
 
 
 ## 1. Project Overview
@@ -37,4 +37,15 @@ The system will:
 - Transmit the collected data via Wi-Fi to a cloud-based web dashboard for remote monitoring and historical data logging.
 
 ## 2. Hardware Components
+Describe your implementation and include block or circuit diagram(s).
 The following components have been selected to build the prototype.
+
+## 3. Software description
+Include flowcharts of your algorithm(s) and direct links to the source files. Present the modules you used in the project.
+
+## 4. Instructions and photos
+Describe how to use the application. Add photos or videos of your application.
+
+## 5. References and tools
+Put here the references and online tools you used.
+...
