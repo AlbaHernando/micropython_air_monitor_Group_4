@@ -1,16 +1,17 @@
 # micropython_air_monitor_Group_4
 BPA-DE2 Project: An ESP32-based indoor air quality monitor programmed in MicroPython.
 
-Project 1: ESP32 Indoor Air Quality Monitor
+# Project 1: ESP32 Indoor Air Quality Monitor
 Course: BPA-DE2 (Digital Electronics) 2025/26 Team Members:
 
-[Your Name]
+Xabier Asla
 
-[Teammate 2 Name]
+Alba Hernando
 
-[Teammate 3 Name]
+Pablo Vicente
 
-1. Project Overview
+
+# 1. Project Overview
 Problem Statement
 Indoor Air Quality (IAQ) is a critical factor influencing human health, comfort, and productivity. Pollutants such as particulate matter (PM2.5/PM10), high levels of Carbon Dioxide (CO2), and volatile organic compounds (VOCs) can accumulate in poorly ventilated indoor environments like homes, schools, and offices. Many of these spaces lack real-time, accessible monitoring, leaving occupants unaware of potential health risks.
 
@@ -19,7 +20,7 @@ This project aims to design and build a cost-effective, real-time Indoor Air Qua
 
 The system will:
 
-Measure key environmental parameters:
+#Measure key environmental parameters:
 
 Temperature & Humidity
 
