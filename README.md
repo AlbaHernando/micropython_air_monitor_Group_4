@@ -4,7 +4,7 @@
 * [1. Project Overview](#1-project-overview)
 * [2. Hardware Components](#2-hardware-components)
 * [3. Software description]()
-* [4. Instructions and photos]()
+* [4. Instructions and photos](#4-instructions-and-photos)
 * [5. References and tools]()
 
 ## Project 1: ESP32 Indoor Air Quality Monitor
