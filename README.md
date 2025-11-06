@@ -2,6 +2,11 @@
 BPA-DE2 Project: An ESP32-based indoor air quality monitor programmed in MicroPython.
 
 * [Project 1: ESP32 Indoor Air Quality Monitor](#project-1-esp32-indoor-air-quality-monitor)
+* [1. Project Overview]()
+* [2. Hardware Components]()
+* [3. Software description]()
+* [4. Instructions and photos]()
+* [5. References and tools]()
 
 ## Project 1: ESP32 Indoor Air Quality Monitor
 Course: BPA-DE2 (Digital Electronics) 2025/26 Team Members:
