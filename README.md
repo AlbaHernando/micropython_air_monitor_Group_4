@@ -1,7 +1,7 @@
 ## Indoor air quality monitoring system
 
 * [Project 1: ESP32 Indoor Air Quality Monitor](#project-1-esp32-indoor-air-quality-monitor)
-* [1. Project Overview]()
+* [1. Project Overview](#1-project-overview)
 * [2. Hardware Components]()
 * [3. Software description]()
 * [4. Instructions and photos]()
