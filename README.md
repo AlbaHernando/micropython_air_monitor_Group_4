@@ -44,7 +44,7 @@ Describe your implementation and include block or circuit diagram(s).
 The following components have been selected to build the prototype.
 
 <p align="center">
-  <img src="(https://github.com/user-attachments/assets/8d166d5f-bcfa-4903-a3b8-f78612e0fcab)" alt="CO2 Sensor" width="500">
+  <img src="![cidlo-teploty-a-vlhkosti-dht11-modul-iduino-se052](https://github.com/user-attachments/assets/8d166d5f-bcfa-4903-a3b8-f78612e0fcab)" alt="CO2 Sensor" width="500">
   <br>
   <em>Sensor de temperatura</em>
 </p>
