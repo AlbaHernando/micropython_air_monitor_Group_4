@@ -46,7 +46,7 @@ The following components have been selected to build the prototype.
 - MCU (MycroController)
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/ad16d6bf-bcfa-4903-a3ba-f78612e0fcab" alt="CO2 Sensor" width="400">
+  <img src="https://github.com/user-attachments/assets/ad16d6bf-bcfa-4903-a3ba-f78612e0fcab" alt="Sensor de temperatura" width="400">
   <br>
   <em>Sensor de temperatura</em>
 </p>
