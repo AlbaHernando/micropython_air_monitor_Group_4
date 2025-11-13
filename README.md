@@ -45,13 +45,25 @@ The following components have been selected to build the prototype.
 
 - MCU (MycroController)
 
-<img width= "400"
-alt "Sensor de Temperatura"
-src= "https://github.com/user-attachments/assets/8d166d5f-bcfa-4903-a3b8-f78612e0fcab">
+<p align="center">
+  <img alt="DHT22 Sensor" src="https://github.com/user-attachments/assets/158a1572-d56c-4f0d-95f1-2d5a76e697ce" width="200">
+  <br>
+  <em>MQ-135 Co2 sensor</em>
+</p>
 
-![cidlo-teploty-a-vlhkosti-dht11-modul-iduino-se052](https://github.com/user-attachments/assets/8d166d5f-bcfa-4903-a3b8-f78612e0fcab)
-![SN-MQ135-MOD (4)](https://github.com/user-attachments/assets/5fb1558b-7a07-4ee1-953f-73e52e20f149)
-![m364](https://github.com/user-attachments/assets/b75f6d39-dc76-4b6f-af72-46ca9d6a93cd)
+<p align="center">
+  <img alt="DHT22 Sensor" src="https://github.com/user-attachments/assets/b87f8879-f5fa-497d-8490-917ca713a047" width="200">
+  <br>
+  <em>DHT11 Temperature and Humidity sensor</em>
+</p>
+
+<p align="center">
+  <img alt="DHT22 Sensor" src="https://github.com/user-attachments/assets/e3ff0a67-f6a2-4fb7-a812-33316e15e527" width="200">
+  <br>
+  <em>GP2Y10 Particules sensor</em>
+</p>
+
+
 
 Provide a list of sensors, actuators, and other electronic components intended for use.
 Include justification for your component choices (why each part is needed).
