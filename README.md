@@ -48,9 +48,14 @@ The following components have been selected to build the prototype.
 - Temperature and Humidity: A DHT11 sensor
 
 <p align="center">
+  <img alt="DHT22 Sensor" src="https://github.com/user-attachments/assets/868c60fd-8720-4029-99f0-47ca6c41ce31" width="200">
+  <br>
+  <em>ESP32 Microcontroller</em>
+</p>
+<p align="center">
   <img alt="DHT22 Sensor" src="https://github.com/user-attachments/assets/158a1572-d56c-4f0d-95f1-2d5a76e697ce" width="200">
   <br>
-  <em>MQ-135 Co2 sensor</em>
+  <em>MQ-135 Quality Air sensor</em>
 </p>
 
 <p align="center">
@@ -64,6 +69,26 @@ The following components have been selected to build the prototype.
   <br>
   <em>GP2Y10 Particules sensor</em>
 </p>
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/158a1572-d56c-4f0d-95f1-2d5a76e697ce" alt="MQ-135 CO2 sensor" width="200">
+      <br>
+      <em>MQ-135 Quality Air sensor</em>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/b87f8879-f5fa-497d-8490-917ca713a047" alt="DHT11 Temperature and Humidity sensor" width="200">
+      <br>
+      <em>DHT11 Temperature and Humidity sensor</em>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/e3ff0a67-f6a2-4fb7-a812-33316e15e527" alt="GP2Y10 Particules sensorr" width="200">
+      <br>
+      <em>GP2Y10 Particules sensor</em>
+    </td>
+  </tr>
+</table>
 
 
 
