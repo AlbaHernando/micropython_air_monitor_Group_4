@@ -43,8 +43,10 @@ The system will:
 Describe your implementation and include block or circuit diagram(s).
 The following components have been selected to build the prototype.
 
+- MCU (MycroController)
+
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/ad16d6bf-bcfa-4903-a3ba-f78612e0fcab" alt="CO2 Sensor" width="500">
+  <img src="https://github.com/user-attachments/assets/ad16d6bf-bcfa-4903-a3ba-f78612e0fcab" alt="CO2 Sensor" width="400">
   <br>
   <em>Sensor de temperatura</em>
 </p>
@@ -53,11 +55,16 @@ The following components have been selected to build the prototype.
 ![SN-MQ135-MOD (4)](https://github.com/user-attachments/assets/5fb1558b-7a07-4ee1-953f-73e52e20f149)
 ![m364](https://github.com/user-attachments/assets/b75f6d39-dc76-4b6f-af72-46ca9d6a93cd)
 
+Provide a list of sensors, actuators, and other electronic components intended for use.
+Include justification for your component choices (why each part is needed).
+
 
 
 
 ## 3. Software description
 Include flowcharts of your algorithm(s) and direct links to the source files. Present the modules you used in the project.
+
+Present system-level block diagrams, flowcharts, or pseudocode showing the planned software logic and control flow.
 
 ## 4. Instructions and photos
 Describe how to use the application. Add photos or videos of your application.
