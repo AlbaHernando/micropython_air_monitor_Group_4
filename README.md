@@ -43,7 +43,9 @@ The system will:
 Describe your implementation and include block or circuit diagram(s).
 The following components have been selected to build the prototype.
 
-- MCU (MycroController)
+- MCU (Microcontroller): ESP32
+- Air quality / CO2: A MQ-135 sensor
+- Temperature and Humidity: A DHT11 sensor
 
 <p align="center">
   <img alt="DHT22 Sensor" src="https://github.com/user-attachments/assets/158a1572-d56c-4f0d-95f1-2d5a76e697ce" width="200">
