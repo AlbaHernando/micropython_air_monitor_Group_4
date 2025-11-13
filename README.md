@@ -45,7 +45,11 @@ The following components have been selected to build the prototype.
 
 - MCU (Microcontroller): ESP32
 - Air quality / CO2: A MQ-135 sensor
-- Temperature and Humidity: A DHT11 sensor
+- Temperature and Humidity: A DHT12 sensor
+- Resistors
+- LEDS
+- Wires
+- 
 
 <p align="center">
   <img alt="DHT22 Sensor" src="https://github.com/user-attachments/assets/868c60fd-8720-4029-99f0-47ca6c41ce31" width="200">
@@ -80,7 +84,7 @@ The following components have been selected to build the prototype.
     <td align="center">
       <img src="https://github.com/user-attachments/assets/b87f8879-f5fa-497d-8490-917ca713a047" alt="DHT11 Temperature and Humidity sensor" width="200">
       <br>
-      <em>DHT11 Temperature and Humidity sensor</em>
+      <em>DHT12 Temperature and Humidity sensor</em>
     </td>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/e3ff0a67-f6a2-4fb7-a812-33316e15e527" alt="GP2Y10 Particules sensorr" width="200">
@@ -108,4 +112,6 @@ Describe how to use the application. Add photos or videos of your application.
 
 ## 5. References and tools
 Put here the references and online tools you used.
+
+
 ...
