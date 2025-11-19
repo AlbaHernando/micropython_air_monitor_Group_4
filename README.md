@@ -103,9 +103,26 @@ Include justification for your component choices (why each part is needed).
 
 
 ## 3. Software description
-Include flowcharts of your algorithm(s) and direct links to the source files. Present the modules you used in the project.
-
+__Include flowcharts of your algorithm(s) and direct links to the source files. Present the modules you used in the project.
 Present system-level block diagrams, flowcharts, or pseudocode showing the planned software logic and control flow.
+
+We created a flowchart for each measurement (Temperature, Humidity, CO2 and Particles), and one final flowchard unifiying all the parameters, integrating the function of Wi-Fi and the monitoring of data, being this flowchard the main program. Each of the individual flowchards of the measurements will be a class in MicroPython.
+
+
+* Temperature Sensor
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/db1d78c9-aa82-4540-89db-f354131db27e" alt="Temperature sensor's Flowchart" width="600">
+  <br>
+  <em>FLOWCHART: Temperature Sensor</em>
+</p>
+
+
+
+
+
+
+
+
 
 ## 4. Instructions and photos
 Describe how to use the application. Add photos or videos of your application.
