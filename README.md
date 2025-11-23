@@ -27,7 +27,7 @@ This project aims to design and build a cost-effective, real-time Indoor Air Qua
 
 The system will:
 
-#Measure key environmental parameters:
+Measure key environmental parameters:
 
 - Temperature & Humidity
 
@@ -40,7 +40,7 @@ The system will:
 - Transmit the collected data via Wi-Fi to a cloud-based web dashboard for remote monitoring and historical data logging.
 
 ## 2. Hardware Components
-Describe your implementation and include block or circuit diagram(s).
+
 The following components have been selected to build the prototype.
 
 - MCU (Microcontroller): ESP32
@@ -49,7 +49,9 @@ The following components have been selected to build the prototype.
 - Resistors
 - LEDS
 - Wires
-- 
+
+  _WHY??????_
+  
 
 <p align="center">
   <img alt="DHT22 Sensor" src="https://github.com/user-attachments/assets/868c60fd-8720-4029-99f0-47ca6c41ce31" width="200">
@@ -96,17 +98,11 @@ The following components have been selected to build the prototype.
 
 
 
-Provide a list of sensors, actuators, and other electronic components intended for use.
-Include justification for your component choices (why each part is needed).
-
-
 
 
 ## 3. Software description
-__Include flowcharts of your algorithm(s) and direct links to the source files. Present the modules you used in the project.
-Present system-level block diagrams, flowcharts, or pseudocode showing the planned software logic and control flow.
 
-We created a flowchart for each measurement (Temperature, Humidity, CO2 and Particles), and one final flowchard unifiying all the parameters, integrating the function of Wi-Fi and the monitoring of data, being this flowchard the main program. Each of the individual flowchards of the measurements will be a class in MicroPython.
+We created a flowchart for each measurement (Temperature-Humidity, CO2 and Particles), and one final flowchard unifiying all the parameters, integrating the function of Wi-Fi and the monitoring of data, being this flowchard the main program. Each of the individual flowchards of the measurements will be a subclass in MicroPython.
 
 
 ### DHT22 Sensor Logic (Temperature & Humidity)
