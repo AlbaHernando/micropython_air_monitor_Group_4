@@ -109,12 +109,21 @@ Present system-level block diagrams, flowcharts, or pseudocode showing the plann
 We created a flowchart for each measurement (Temperature, Humidity, CO2 and Particles), and one final flowchard unifiying all the parameters, integrating the function of Wi-Fi and the monitoring of data, being this flowchard the main program. Each of the individual flowchards of the measurements will be a class in MicroPython.
 
 
-* Temperature Sensor
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/db1d78c9-aa82-4540-89db-f354131db27e" alt="Temperature sensor's Flowchart" width="600">
+### DHT22 Sensor Logic (Temperature & Humidity)
+
+A unified flowchart has been developed for the DHT22 sensor. Since this single hardware component measures both temperature and humidity, combining their logic accurately reflects the sequential reading and processing workflow, optimizing code structure and display output.
+
+<details>
+  <summary>▶️ <strong>Click here to expand the Flowchart of sensor DHT12 (Temperature & Humidity)</strong></summary>
   <br>
-  <em>FLOWCHART: Temperature Sensor</em>
-</p>
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/71356aa2-b297-4aa2-b404-84ab8e8e66e4" alt="DHT12 Combined Flowchart" width="800">
+    <br>
+    <em>Logic for Temperature and Humidity Sequential Processing</em>
+  </p>
+</details>
+
+
 
 
 
