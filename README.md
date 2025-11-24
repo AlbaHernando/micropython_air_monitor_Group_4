@@ -113,11 +113,14 @@ A unified flowchart has been developed for the DHT22 sensor. Since this single h
   <summary>▶️ <strong>Click here to expand the Flowchart of sensor DHT12 (Temperature & Humidity)</strong></summary>
   <br>
   <p align="center">
-    <img src="https://github.com/user-attachments/assets/71356aa2-b297-4aa2-b404-84ab8e8e66e4" alt="DHT12 Combined Flowchart" width="800">
+    <img src="https://github.com/user-attachments/assets/b2d0b347-fffe-4892-9014-18a7e2c6da55" alt="DHT12 Combined Flowchart" width="800">
     <br>
     <em>Logic for Temperature and Humidity Sequential Processing</em>
   </p>
 </details>
+
+
+
 
 
 
