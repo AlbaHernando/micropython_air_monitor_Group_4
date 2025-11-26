@@ -9,12 +9,9 @@
 ## Project 1: ESP32 Indoor Air Quality Monitor
 Course: BPA-DE2 (Digital Electronics) 2025/26 Team Members:
 
-- Xabier Asla    (responsible for ...)
-
-- Alba Hernando  (responsible for ...)
-
-- Pablo Vicente  (responsible for ...)
-
+- **Xabier Asla:** Responsible for 
+- **Alba Hernando:** Responsible for 
+- **Pablo Vicente:** Responsible for 
 
 ## 1. Project Overview
 **Problem Statement**
@@ -27,82 +24,81 @@ This project aims to design and build a cost-effective, real-time Indoor Air Qua
 
 The system will:
 
-Measure key environmental parameters:
+1.  **Measure key environmental parameters:**
+    -   Temperature & Humidity
+    -   General Air Quality (CO2 proxy, VOCs)
+    -   Particulate Matter (PM2.5 & PM10)
+2.  **Display the data locally** on an OLED screen for immediate feedback to occupants.
+3.  **Transmit the collected data via Wi-Fi** to a cloud-based web dashboard for remote monitoring and historical data logging.
 
-- Temperature & Humidity
 
-- General Air Quality (CO2, VOCs)
 
-- Particulate Matter (PM2.5 & PM10)
-
-- Display the data locally on an OLED screen for immediate feedback.
-
-- Transmit the collected data via Wi-Fi to a cloud-based web dashboard for remote monitoring and historical data logging.
 
 ## 2. Hardware Components
 
-The following components have been selected to build the prototype.
+This section details the hardware selected for the prototype. The components are chosen to balance cost, ease of integration with MicroPython, and the ability to meet the project's monitoring requirements.
 
-- MCU (Microcontroller): ESP32
-- Air quality / CO2: A MQ-135 sensor
-- Temperature and Humidity: A DHT12 sensor
-- Resistors
-- LEDS
-- Wires
-
-  _WHY??????_
-  
-
-<p align="center">
-  <img alt="DHT22 Sensor" src="https://github.com/user-attachments/assets/868c60fd-8720-4029-99f0-47ca6c41ce31" width="200">
-  <br>
-  <em>ESP32 Microcontroller</em>
-</p>
-<p align="center">
-  <img alt="DHT22 Sensor" src="https://github.com/user-attachments/assets/158a1572-d56c-4f0d-95f1-2d5a76e697ce" width="200">
-  <br>
-  <em>MQ-135 Quality Air sensor</em>
-</p>
-
-<p align="center">
-  <img alt="DHT22 Sensor" src="https://github.com/user-attachments/assets/b87f8879-f5fa-497d-8490-917ca713a047" width="200">
-  <br>
-  <em>DHT11 Temperature and Humidity sensor</em>
-</p>
-
-<p align="center">
-  <img alt="DHT22 Sensor" src="https://github.com/user-attachments/assets/e3ff0a67-f6a2-4fb7-a812-33316e15e527" width="200">
-  <br>
-  <em>GP2Y10 Particules sensor</em>
-</p>
+### Component Visual Overview
 
 <table align="center">
   <tr>
-    <td align="center">
-      <img src="https://github.com/user-attachments/assets/158a1572-d56c-4f0d-95f1-2d5a76e697ce" alt="MQ-135 CO2 sensor" width="200">
+    <td align="center" width="33%">
+      <img src="https://github.com/user-attachments/assets/ae15a0fd-06b0-45d0-bb53-72c08e412a20" alt="ESP32 FireBeetle" width="95%">
       <br>
-      <em>MQ-135 Quality Air sensor</em>
+      <em>Main Controller (ESP32)</em>
     </td>
-    <td align="center">
-      <img src="https://github.com/user-attachments/assets/b87f8879-f5fa-497d-8490-917ca713a047" alt="DHT11 Temperature and Humidity sensor" width="200">
-      <br>
-      <em>DHT12 Temperature and Humidity sensor</em>
-    </td>
-    <td align="center">
-      <img src="https://github.com/user-attachments/assets/e3ff0a67-f6a2-4fb7-a812-33316e15e527" alt="GP2Y10 Particules sensorr" width="200">
+    <td align="center" width="33%">
+      <img src="https://github.com/user-attachments/assets/e3ff0a67-f6a2-4fb7-a812-33316e15e527" alt="GP2Y10 Particules sensor" width="95%">
       <br>
       <em>GP2Y10 Particules sensor</em>
     </td>
+    <td align="center" width="33%">
+      <img src="https://github.com/user-attachments/assets/b87f8879-f5fa-497d-8490-917ca713a047" alt="DHT11 Temperature and Humidity sensor" width="95%">
+      <br>
+      <em>DHT11 Temperature and Humidity sensor</em>
+    </td>
+  </tr>
+  
+  <tr>
+    <td align="center" width="33%">
+      <img src="https://github.com/user-attachments/assets/158a1572-d56c-4f0d-95f1-2d5a76e697ce" alt="MQ-135 CO2 sensor" width="95%">
+      <br>
+      <em>MQ-135 CO2 sensor</em>
+    </td>
+    <td align="center" width="33%">
+      <img src="https://github.com/user-attachments/assets/232918aa-34fe-408a-a5ac-71618d92a3c1" alt="1 3-I2C-OLED" width="95%">
+      <br>
+      <em>1 3-I2C-OLED</em>
+    </td>
+    <td align="center" width="33%">
+      <img src="LINK" alt="Description image" width="95%">
+      <br>
+      <em>Descripción Imagen 6</em>
+    </td>
   </tr>
 </table>
+<br>e>
+<br> 
 
 
+### Component List & Functions
+
+| Component | Type | Primary Role / Function |
+| :--- | :--- | :--- |
+| **ESP32 FireBeetle** | MCU | Main controller; manages sensors, data processing, and Wi-Fi transmission to the cloud. |
+| **DHT12 (or DHT22)** | Sensor | Measures ambient Temperature and Relative Humidity (digital output). |
+| **MQ-135** | Sensor | Detects general air quality gases (VOCs, smoke) acting as a proxy for poor ventilation (analog output). |
+| **SDS011** | Sensor | Uses laser scattering to precisely count fine dust particles (PM2.5 & PM10) (UART serial). |
+| **OLED Display (0.96")**| Output | Provides immediate real-time visual feedback of readings to occupants (I2C). |
+| **Status LEDs** | Output | Red/Yellow/Green traffic-light indicators for quick "at-a-glance" air quality status. |
+| **Breadboard & Wires**| Prototyping | Solderless infrastructure for rapid circuit building and testing. |
+  
 
 
 
 ## 3. Software description
 
-We created a flowchart for each measurement (Temperature-Humidity, CO2 and Particles), and one final flowchard unifiying all the parameters, integrating the function of Wi-Fi and the monitoring of data, being this flowchard the main program. Each of the individual flowchards of the measurements will be a subclass in MicroPython.
+We created a flowchart for each measurement (Temperature, Humidity, CO2 and Particles), and one final flowchard unifiying all the parameters, integrating the function of Wi-Fi and the monitoring of data, being this flowchard the main program. Each of the individual flowchards of the measurements will be a subclass in MicroPython.
 
 
 ### DHT22 Sensor Logic (Temperature & Humidity)
@@ -118,17 +114,6 @@ A unified flowchart has been developed for the DHT22 sensor. Since this single h
     <em>Logic for Temperature and Humidity Sequential Processing</em>
   </p>
 </details>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
