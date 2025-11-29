@@ -43,7 +43,7 @@ This section details the hardware selected for the prototype. The components are
 <table align="center">
   <tr>
     <td align="center" width="33%">
-      <img src="https://github.com/user-attachments/assets/ae15a0fd-06b0-45d0-bb53-72c08e412a20" alt="ESP32 FireBeetle" width="95%">
+      <img src="https://github.com/user-attachments/assets/3c8842ac-89b0-4d19-9491-1b28500b538d" alt="ESP32 FireBeetle" width="95%">
       <br>
       <em>Main Controller (ESP32)</em>
     </td>
@@ -86,7 +86,7 @@ This section details the hardware selected for the prototype. The components are
 | Component | Type | Primary Role / Function |
 | :--- | :--- | :--- |
 | **ESP32 FireBeetle** | MCU | Main controller; manages sensors, data processing, and Wi-Fi transmission to the cloud. |
-| **DHT12 (or DHT22)** | Sensor | Measures ambient Temperature and Relative Humidity (digital output). |
+| **DHT12** | Sensor | Measures ambient Temperature and Relative Humidity (digital output). |
 | **MQ-135** | Sensor | Detects general air quality gases (VOCs, smoke) acting as a proxy for poor ventilation (analog output). |
 | **SDS011** | Sensor | Uses laser scattering to precisely count fine dust particles (PM2.5 & PM10) (UART serial). |
 | **OLED Display (0.96")**| Output | Provides immediate real-time visual feedback of readings to occupants (I2C). |
@@ -100,7 +100,7 @@ This section details the hardware selected for the prototype. The components are
 
 We created a flowchart for each measurement (Temperature, Humidity, CO2 and Particles), and one final flowchard unifiying all the parameters, integrating the function of Wi-Fi and the monitoring of data, being this flowchard the main program. Each of the individual flowchards of the measurements will be a subclass in MicroPython.
 
-
+*DESCRIPTIONS WITH WIRES AND CONNECTIONS*
 ### DHT22 Sensor Logic (Temperature & Humidity)
 
 A unified flowchart has been developed for the DHT22 sensor. Since this single hardware component measures both temperature and humidity, combining their logic accurately reflects the sequential reading and processing workflow, optimizing code structure and display output.
