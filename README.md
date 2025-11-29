@@ -38,7 +38,6 @@ This section details the hardware selected for the prototype, justifications, an
 ### 2.1 Component Visual Overview
 
 
-
 <table align="center">
   <tr>
     <td align="center" width="33%">
@@ -83,10 +82,6 @@ This section details the hardware selected for the prototype, justifications, an
 
 
 
-
-
-
-
 ### 2.2 Component List & Functions
 
 | Component | Type | Primary Role / Function |
@@ -98,18 +93,78 @@ This section details the hardware selected for the prototype, justifications, an
 | **OLED Display (0.96")**| Output | Provides immediate real-time visual feedback of readings to occupants (I2C). |
 | **Status LEDs** | Output | Red/Yellow/Green traffic-light indicators for quick "at-a-glance" air quality status. |
 | **Breadboard & Wires**| Prototyping | Solderless infrastructure for rapid circuit building and testing. |
+
   
 ### 2.3 Circuit diagram and wiring
+
+The following diagram shows how all components are connected to the ESP32 FireBeetle microcontroller.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/8bb77021-7ce6-46e1-b73e-c4bcd403c7c1" alt="Circuit Wiring Diagram" width="700">
   <br>
   <em>Figure 2: Complete System Wiring Diagram.</em>
 
+  ### Pinout Table (Connection Scheme)
+
+
+| Component | Component Pin | ESP32 Pin (GPIO) | Function |
+| :--- | :--- | :--- | :--- |
+| **DHT12 (Temp/Hum)** | SDA | **21** | I2C Data Bus (Shared) |
+| | SCL | **22** | I2C Clock Bus (Shared) |
+| **OLED Display** | SDA | **21** | I2C Data Bus (Shared) |
+| | SCL | **22** | I2C Clock Bus (Shared) |
+| **MQ-135 (CO2 Proxy)**| A0 (Analog Out) | **36** (Sensor VP) | Analog Input (ADC) |
+| **GP2Y10 (Particles)**| Vo (Analog Out) | **39** (Sensor VN) | Analog Input (ADC) |
+| | V-LED (LED Ctrl)| **15** | Digital Output (LED Pulse) |
+| **Red LED** | Anode (+) | **27** | Digital Output |
+| **Yellow LED** | Anode (+) | **26** | Digital Output |
+| **Green LED** | Anode (+) | **25** | Digital Output |
+| **Power** | VCC/VDD | 3V3 / 5V | Power Supply |
+| **Ground** | GND | GND | Common Ground |
 ---
+
 ## 3. Software description
 
+To make the software easy to manage and understand, we wrote it in MicroPython and organized it using a modular approach.
+
+### 3.1 Project Directory Structure
+
+The source code is organized into a main controller script in the root directory and specific sensor/helper libraries in a `/lib` subdirectory.
+
+```/ (Root Directory)
+    │
+    ├─ main.py     # The central coordinator script.
+    ├── config.py  # Contains credentials (WiFi SSID/Pass, API URL).
+    └── lib/ # Custom libraries folder
+        ├── TandH.py       # Logic for Temperature & Humidity analysis.
+        ├── CO2.py         # Logic for MQ-135 reading and analysis.
+        ├── particule.py   # Logic for Particle sensor reading sequence.
+        ├── wifi_utils.py  # Helper functions for managing Wi-Fi connection.
+        ├── dht12.py       # Hardware driver for DHT12 sensor.
+        └── sh1106.py      # Hardware driver for OLED display.
+```
+
+
+
+
+
+### 3.2 Overall System Logic Explained
+
+The `main.py` script develops the following sequential loop:
+
+1.  **Initialization:** On startup, the system initializes all hardware pins (I2C, ADCs, LEDs), turns on the Green LED to indicate power, and attempts to connect to Wi-Fi using credentials from `config.py`.
+2.  **Measurement Cycle (Step 1):** The system sequentially calls the analysis functions imported from the `/lib` folder (`analyze_T`, `analyze_H`, etc.). Each library function reads its respective hardware sensor, applies threshold logic to determine a status (OK, Warning, Danger), and returns both raw values and status flags.
+3.  **Global Status Determination (Step 2):** The main script evaluates the status flags returned by all sensors. It applies a priority logic: **Red (Danger) trumps Yellow (Warning), which trumps Green (Ideal)**. The corresponding physical LED is turned ON.
+4.  **Display Update (Step 3):** While the status LED is active, the system iterates through the sensor data, updating the OLED display sequentially with each sensor's readings and status messages, pausing briefly for readability.
+5.  **Cloud Transmission (Step 4):** If Wi-Fi is connected, the system packages all collected data and the global status into a JSON payload and sends it via an HTTP POST request to the configured cloud endpoint. *Note: Data sending is skipped if critical sensor errors are detected to maintain data integrity.*
+6.  **Repeat:** The LEDs are reset, and after a short delay, the cycle begins anew.
+
+
+
 We created a flowchart for each measurement (Temperature, Humidity, CO2 and Particles), and one final flowchard unifiying all the parameters, integrating the function of Wi-Fi and the monitoring of data, being this flowchard the main program. Each of the individual flowchards of the measurements will be a subclass in MicroPython.
+
+
+
 
 *DESCRIPTIONS WITH WIRES AND CONNECTIONS*
 ### DHT22 Sensor Logic (Temperature & Humidity)
