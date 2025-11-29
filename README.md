@@ -12,7 +12,7 @@ Course: BPA-DE2 (Digital Electronics) 2025/26 Team Members:
 - **Xabier Asla:** Responsible for 
 - **Alba Hernando:** Responsible for 
 - **Pablo Vicente:** Responsible for 
-
+---
 ## 1. Project Overview
 **Problem Statement**
 
@@ -24,64 +24,70 @@ This project aims to design and build a cost-effective, real-time Indoor Air Qua
 
 The system will:
 
-1.  **Measure key environmental parameters:**
-    -   Temperature & Humidity
-    -   General Air Quality (CO2 proxy, VOCs)
-    -   Particulate Matter (PM2.5 & PM10)
-2.  **Display the data locally** on an OLED screen for immediate feedback to occupants.
-3.  **Transmit the collected data via Wi-Fi** to a cloud-based web dashboard for remote monitoring and historical data logging.
+1.  **Measure environmental parameters sequentially:** First, it reads the temperature and humidity from the DHT12, then checks the general air quality (CO2 proxy) with the MQ-135, and finally measures particulate matter (PM2.5 & PM10) using the optical sensor.
+2.  **Analyze and Determine Status:** The code compares these readings against health thresholds to decide the overall status of the room: **Ideal (Green), Warning (Yellow), or Danger (Red)**.
+3.  **Display Data Locally:** It shows the readings and status messages right on the OLED screen for immediate feedback to occupants.
+4.  **Visually Alert:** To make it obvious at a glance, it activates physical traffic-light LEDs corresponding to the global status.
+5.  **Transmit Data:** Finally, it sends all the collected data via Wi-Fi to a cloud-based dashboard for remote monitoring and historical logging.
 
-
-
-
+---
 ## 2. Hardware Components
 
-This section details the hardware selected for the prototype. The components are chosen to balance cost, ease of integration with MicroPython, and the ability to meet the project's monitoring requirements.
+This section details the hardware selected for the prototype, justifications, and the connection scheme.
 
-### Component Visual Overview
+### 2.1 Component Visual Overview
+
+
 
 <table align="center">
   <tr>
     <td align="center" width="33%">
       <img src="https://github.com/user-attachments/assets/3c8842ac-89b0-4d19-9491-1b28500b538d" alt="ESP32 FireBeetle" width="95%">
       <br>
-      <em>Main Controller (ESP32)</em>
+      <em>Main Controller (ESP32 FireBeetle)</em>
     </td>
     <td align="center" width="33%">
-      <img src="https://github.com/user-attachments/assets/e3ff0a67-f6a2-4fb7-a812-33316e15e527" alt="GP2Y10 Particules sensor" width="95%">
+      <img src="https://github.com/user-attachments/assets/b87f8879-f5fa-497d-8490-917ca713a047" alt="DHT12 Sensor" width="95%">
       <br>
-      <em>GP2Y10 Particules sensor</em>
+      <em>Temp & Humidity Sensor (DHT12)</em>
     </td>
     <td align="center" width="33%">
-      <img src="https://github.com/user-attachments/assets/b87f8879-f5fa-497d-8490-917ca713a047" alt="DHT11 Temperature and Humidity sensor" width="95%">
+      <img src="https://github.com/user-attachments/assets/158a1572-d56c-4f0d-95f1-2d5a76e697ce" alt="MQ-135 Sensor" width="95%">
       <br>
-      <em>DHT11 Temperature and Humidity sensor</em>
+      <em>Air Quality Proxy Sensor (MQ-135)</em>
     </td>
   </tr>
   
   <tr>
     <td align="center" width="33%">
-      <img src="https://github.com/user-attachments/assets/158a1572-d56c-4f0d-95f1-2d5a76e697ce" alt="MQ-135 CO2 sensor" width="95%">
+      <img src="https://github.com/user-attachments/assets/e3ff0a67-f6a2-4fb7-a812-33316e15e527" alt="Particle Sensor" width="95%">
       <br>
-      <em>MQ-135 CO2 sensor</em>
+      <em>Optical Particle Sensor (GP2Y10)</em>
     </td>
     <td align="center" width="33%">
-      <img src="https://github.com/user-attachments/assets/232918aa-34fe-408a-a5ac-71618d92a3c1" alt="1 3-I2C-OLED" width="95%">
+      <img src="https://github.com/user-attachments/assets/232918aa-34fe-408a-a5ac-71618d92a3c1" alt="OLED Display" width="95%">
       <br>
-      <em>1 3-I2C-OLED</em>
+      <em>OLED Display (0.96" I2C)</em>
     </td>
     <td align="center" width="33%">
-      <img src="LINK" alt="Description image" width="95%">
+      <img src="https://github.com/user-attachments/assets/4cf6bb4f-72ea-4c29-8b47-8cb40cc9ae43" alt="Status LEDs" width="95%">
       <br>
-      <em>Descripción Imagen 6</em>
+      <em>Status LEDs (Red, Yellow, Green)</em>
     </td>
   </tr>
 </table>
-<br>e>
-<br> 
+
+<p align="center">
+  <em>Figure 1: Selected Hardware Components Overview.</em>
+</p>
 
 
-### Component List & Functions
+
+
+
+
+
+### 2.2 Component List & Functions
 
 | Component | Type | Primary Role / Function |
 | :--- | :--- | :--- |
@@ -93,9 +99,14 @@ This section details the hardware selected for the prototype. The components are
 | **Status LEDs** | Output | Red/Yellow/Green traffic-light indicators for quick "at-a-glance" air quality status. |
 | **Breadboard & Wires**| Prototyping | Solderless infrastructure for rapid circuit building and testing. |
   
+### 2.3 Circuit diagram and wiring
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8bb77021-7ce6-46e1-b73e-c4bcd403c7c1" alt="Circuit Wiring Diagram" width="700">
+  <br>
+  <em>Figure 2: Complete System Wiring Diagram.</em>
 
-
+---
 ## 3. Software description
 
 We created a flowchart for each measurement (Temperature, Humidity, CO2 and Particles), and one final flowchard unifiying all the parameters, integrating the function of Wi-Fi and the monitoring of data, being this flowchard the main program. Each of the individual flowchards of the measurements will be a subclass in MicroPython.
@@ -116,10 +127,10 @@ A unified flowchart has been developed for the DHT22 sensor. Since this single h
 </details>
 
 
-
+---
 ## 4. Instructions and photos
 Describe how to use the application. Add photos or videos of your application.
-
+---
 ## 5. References and tools
 Put here the references and online tools you used.
 
