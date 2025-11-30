@@ -7,7 +7,7 @@
 * [5. References and tools](#5-references-and-tools)
 
 ## Project 1: ESP32 Indoor Air Quality Monitor
-Course: BPA-DE2 (Digital Electronics) 2025/26 Team Members:
+Course: BPA-DE2 (Digital Electronics) 2025/26 Team 4, Members:
 
 - **Xabier Asla:** Responsible for 
 - **Alba Hernando:** Responsible for 
@@ -25,10 +25,14 @@ This project aims to design and build a cost-effective, real-time Indoor Air Qua
 The system will:
 
 1.  **Measure environmental parameters sequentially:** First, it reads the temperature and humidity from the DHT12, then checks the general air quality (CO2 proxy) with the MQ-135, and finally measures particulate matter (PM2.5 & PM10) using the optical sensor.
+
 2.  **Analyze and Determine Status:** The code compares these readings against health thresholds to decide the overall status of the room: **Ideal (Green), Warning (Yellow), or Danger (Red)**.
-3.  **Display Data Locally:** It shows the readings and status messages right on the OLED screen for immediate feedback to occupants.
-4.  **Visually Alert:** To make it obvious at a glance, it activates physical traffic-light LEDs corresponding to the global status.
-5.  **Transmit Data:** Finally, it sends all the collected data via Wi-Fi to a cloud-based dashboard for remote monitoring and historical logging.
+
+3.  **Visually Alert:** To make it obvious at a glance, it activates physical traffic-light LEDs corresponding to the global status.
+
+4.  **Display Data Locally:** It shows the readings and status messages right on the OLED screen for immediate feedback to occupants.
+
+5.  **Transmit Data:** Finally, it sends the logic collected data via Wi-Fi to a cloud-based dashboard for remote monitoring and historical logging.
 
 ---
 ## 2. Hardware Components
@@ -151,44 +155,157 @@ The source code is organized into a main controller script in the root directory
 
 ### 3.2 Overall System Logic Explained
 
-The `main.py` script develops the following sequential loop:
 
-1.  **Initialization:** On startup, the system initializes all hardware pins (I2C, ADCs, LEDs), turns on the Green LED to indicate power, and attempts to connect to Wi-Fi using credentials from `config.py`.
-2.  **Measurement Cycle (Step 1):** The system sequentially calls the analysis functions imported from the `/lib` folder (`analyze_T`, `analyze_H`, etc.). Each library function reads its respective hardware sensor, applies threshold logic to determine a status (OK, Warning, Danger), and returns both raw values and status flags.
-3.  **Global Status Determination (Step 2):** The main script evaluates the status flags returned by all sensors. It applies a priority logic: **Red (Danger) trumps Yellow (Warning), which trumps Green (Ideal)**. The corresponding physical LED is turned ON.
-4.  **Display Update (Step 3):** While the status LED is active, the system iterates through the sensor data, updating the OLED display sequentially with each sensor's readings and status messages, pausing briefly for readability.
-5.  **Cloud Transmission (Step 4):** If Wi-Fi is connected, the system packages all collected data and the global status into a JSON payload and sends it via an HTTP POST request to the configured cloud endpoint. *Note: Data sending is skipped if critical sensor errors are detected to maintain data integrity.*
-6.  **Repeat:** The LEDs are reset, and after a short delay, the cycle begins anew.
+The `main.py` script runs a continuous loop following the next steps in order:
+
+1.  **Initialization:** When the system starts up, it first sets up all the hardware connections (the I2C bus, ADCs, and LEDs). We turn on the Green LED right away to show it has power. Then, it tries to connect to the Wi-Fi using the password we saved in `config.py`.
 
 
-
-We created a flowchart for each measurement (Temperature, Humidity, CO2 and Particles), and one final flowchard unifiying all the parameters, integrating the function of Wi-Fi and the monitoring of data, being this flowchard the main program. Each of the individual flowchards of the measurements will be a subclass in MicroPython.
-
+2.  **Measurement Cycle (Step 1):** The main script calls the functions we wrote for each sensor (like `analyze_T`, `analyze_H`, etc., which are in the `/lib` folder). Each function reads its own sensor hardware, checks if the value is okay based on our thresholds (determining if it's OK, Warning, or Danger), and sends back both the raw numbers and the status flags.
 
 
+3.  **Global Status Determination (Step 2):** Once it has data from all sensors, the main script looks at all the status flags to decide the overall room status. We used a priority logic: **Red (Danger) is more important than Yellow (Warning), which is more important than Green (Ideal)**. It then turns on the correct physical LED on the breadboard.
 
-*DESCRIPTIONS WITH WIRES AND CONNECTIONS*
-### DHT22 Sensor Logic (Temperature & Humidity)
 
-A unified flowchart has been developed for the DHT22 sensor. Since this single hardware component measures both temperature and humidity, combining their logic accurately reflects the sequential reading and processing workflow, optimizing code structure and display output.
+4.  **Display Update (Step 3):** With the status LED on, the system goes through the sensor readings one by one and shows them on the OLED screen along with their status messages. We added a short pause between each one so it's easy to read.
+
+
+5.  **Cloud Transmission (Step 4):** If the Wi-Fi connection is working, the system packs all the collected data and the global status into a JSON message and sends it to our cloud endpoint using an HTTP POST request. *Note: We added a check so that if a sensor has a critical error, we skip sending data to avoid cluttering the cloud with bad readings.*
+
+
+6.  **Repeat:** Finally, it turns off the LEDs, waits a moment, and starts the whole cycle over again.
+
+### 3.3 Software Flowcharts
+
+Below are the flowcharts illustrating the logic for the main program and specific sensor sub-processes.
+
+#### Main program
 
 <details>
-  <summary>▶️ <strong>Click here to expand the Flowchart of sensor DHT12 (Temperature & Humidity)</strong></summary>
+  <summary>▶️ <strong>Click here to expand the Flowchart of the main program</strong></summary>
   <br>
   <p align="center">
-    <img src="https://github.com/user-attachments/assets/b2d0b347-fffe-4892-9014-18a7e2c6da55" alt="DHT12 Combined Flowchart" width="800">
+    <img src="https://github.com/user-attachments/assets/203762f3-a349-46bd-b811-794114ea5cb6" alt="Main program Flowchart" width="800">
     <br>
-    <em>Logic for Temperature and Humidity Sequential Processing</em>
+    <em>Logic for the main program</em>
   </p>
 </details>
 
 
+#### Temperature measurement and analysis logic
+
+<details>
+  <summary>▶️ <strong>Click here to expand the Flowchart of Temperature measurement and analysis logic </strong></summary>
+  <br>
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/341e5e46-bee4-4cec-afc4-873229da5c38" alt="Temperature Flowchart" width="800">
+    <br>
+    <em>Logic for Temperature Processing</em>
+  </p>
+</details>
+
+
+#### Humidity measurement and analysis logic
+
+<details>
+  <summary>▶️ <strong>Click here to expand the Flowchart of Humidity measurement and analysis logic </strong></summary>
+  <br>
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/8073c73f-bedb-4156-a172-5377bd5d81f1" alt="Humidity Flowchart" width="800">
+    <br>
+    <em>Logic for Humidity Processing</em>
+  </p>
+</details>
+
+#### CO2 proxy measurement and analysis logic
+
+<details>
+  <summary>▶️ <strong>Click here to expand the Flowchart of CO2 proxy measurement and analysis logic </strong></summary>
+  <br>
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/86539a89-67cd-48f1-95b5-c50468441b13" alt="CO2 proxy Flowchart" width="800">
+    <br>
+    <em>Logic for CO2 proxy Processing</em>
+  </p>
+</details>
+
+
+#### Particles measurement and analysis logic
+
+<details>
+  <summary>▶️ <strong>Click here to expand the Flowchart of Particles measurement and analysis logic </strong></summary>
+  <br>
+  <p align="center">
+    <img src="https://github.com/user-attachments/assets/b0d33c72-ade7-4e57-bc18-94b95d0ac014" alt="Particles Flowchart" width="800">
+    <br>
+    <em>Logic for Particles Processing</em>
+  </p>
+</details>
+
+
+
 ---
 ## 4. Instructions and photos
-Describe how to use the application. Add photos or videos of your application.
+
+### 4.1 Instructions
+
+To be able to replicate and run this project you have to follow the next steps:
+
+1.  **Hardware Assembly:** Assemble the circuit on a breadboard following the Wiring Diagram and Pinout Table provided in Section 2.3.
+
+
+2.  **Firmware:** Ensure the ESP32 is flashed with MicroPython firmware.
+
+
+3.  **File Upload:** Upload all files from this repository to the ESP32, maintaining the exact directory structure.
+
+
+4.  **Configuration:** Edit the `config.py` file on the ESP32 to enter your local Wi-Fi SSID, Password, and your Cloud API Endpoint URL. **This step is crucial so that the microcontroller is able to connect to Wi-Fi and Cloud and it operates correctly. Make sure not to forget it.**
+
+
+5.  **Execution:** Reset the ESP32. The `main.py` script should run automatically. The Green LED will light up initially, followed by Wi-Fi connection status on the OLED screen, and then the main measurement loop will begin.
+
+### 4.2 Photographs and the video of the final project
+
+<h2 align="center">1. Prototype Demonstration Video</h2>
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=PON_AQUI_EL_ID_DE_TU_VIDEO_DE_YOUTUBE" target="_blank">
+    <img src="https://img.youtube.com/vi/PON_AQUI_EL_ID_DE_TU_VIDEO_DE_YOUTUBE/maxresdefault.jpg" 
+         alt="Watch the video demonstration" width="700" border="10" />
+  </a>
+  <br>
+  <em>Video demonstration showing the functionality and operation of our Indoor Air Quality Monitor prototype.</em>
+</p>
+
 ---
-## 5. References and tools
-Put here the references and online tools you used.
+
+## 5. Project Pitch Poster
+
+Below is the project poster summarizing the concept, design, and value proposition of the Indoor Air Quality Monitor.
+
+<p align="center">
+  <a href="PON_AQUI_EL_ENLACE_AL_ARCHIVO_DE_TU_POSTER_EN_GITHUB" target="_blank">
+    <img src="PON_AQUI_EL_ENLACE_A_LA_IMAGEN_DE_TU_POSTER_EN_GITHUB" alt="Project Poster Thumbnail" width="800" style="border: 2px solid #ddd; border-radius: 4px; padding: 5px;">
+  </a>
+  <br>
+  <em>Click on the image to view the full-size poster.</em>
+</p>
+
+---
+
+## 6. References & Tools
+
+ * **MicroPython Documentation:** https://docs.micropython.org/
+* **ESP32 Pinout Reference:** Espressif Systems documentation.
+* **Sensor Datasheets:** DHT12, MQ-135, GP2Y10/SDS011 datasheets.
+* **Development IDE:** Thonny IDE.
+* **Diagramming Tools:** https://www.drawio.com/ used for flowcharts, **program** used for wiring diagrams.
+  
+---
+
+
+
 
 
 ...
