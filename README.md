@@ -4,7 +4,7 @@
 * [2. Hardware Components](#2-hardware-components)
 * [3. Software description](#3-software-description)
 * [4. Instructions and photos](#4-instructions-and-photos)
-* [5. Project poster](#5-project-poster)
+* [5. Project Pitch poster](#5-project-pitch-poster)
 * [6. References and tools](#6-references-and-tools)
 
 ## Project 1: ESP32 Indoor Air Quality Monitor
@@ -308,7 +308,7 @@ After unzipping, the downloaded folder will contain the following structured fil
 
 ---
 
-## 5. Project Poster
+## 5. Project Pitch Poster
 
 Below is the project poster summarizing the concept, design, and value proposition of the Indoor Air Quality Monitor.
 
