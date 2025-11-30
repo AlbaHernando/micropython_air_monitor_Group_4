@@ -312,11 +312,11 @@ Below is the project poster summarizing the concept, design, and value propositi
 
 ## 6. References & Tools
 
- * **MicroPython Documentation:** https://docs.micropython.org/
+* **MicroPython Documentation:** https://docs.micropython.org/
 * **ESP32 Pinout Reference:** Espressif Systems documentation.
 * **Sensor Datasheets:** DHT12, MQ-135, GP2Y10/SDS011 datasheets.
 * **Development IDE:** Thonny IDE.
-* **Diagramming Tools:** https://www.drawio.com/ used for flowcharts, **program** used for wiring diagrams.
+* **Diagramming Tools:** https://www.drawio.com/ used for flowcharts, https://easyeda.com/es used for wiring diagrams.
   
 ---
 
