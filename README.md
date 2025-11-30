@@ -158,6 +158,7 @@ The source code is organized into a main controller script in the root directory
 
 The `main.py` script runs a continuous loop following the next steps in order:
 
+
 1.  **Initialization:** When the system starts up, it first sets up all the hardware connections (the I2C bus, ADCs, and LEDs). We turn on the Green LED right away to show it has power. Then, it tries to connect to the Wi-Fi using the password we saved in `config.py`.
 
 
@@ -169,11 +170,26 @@ The `main.py` script runs a continuous loop following the next steps in order:
 
 4.  **Display Update (Step 3):** With the status LED on, the system goes through the sensor readings one by one and shows them on the OLED screen along with their status messages. We added a short pause between each one so it's easy to read.
 
-
-5.  **Cloud Transmission (Step 4):** If the Wi-Fi connection is working, the system packs all the collected data and the global status into a JSON message and sends it to our cloud endpoint using an HTTP POST request. *Note: We added a check so that if a sensor has a critical error, we skip sending data to avoid cluttering the cloud with bad readings.*
+5.  **Cloud Transmission (Step 4):** If the Wi-Fi connection is working, the system packs all the collected data and the global status into a payload and sends it to our cloud endpoint (ThingSpeak) using an HTTP POST request.
+    * **ThingSpeak Channel Configuration:** We have set up a ThingSpeak channel with the following field mapping to store our data:
+  
+      
+        | Field No. | Data Stored | Unit/Type |
+        | :--- | :--- | :--- |
+        | **Field 1** | Temperature | °C |
+        | **Field 2** | Humidity | % |
+        | **Field 3** | CO2 Proxy Value | Voltage |
+        | **Field 4** | Particle Sensor Value | Voltage |
+        | **Field 5** | Global System Status | String (e.g., "IDEAL") |
+    * **Live Demo:** You can view the real-time data streaming to our public ThingSpeak dashboard here: **[https://api.thingspeak.com/update]**
+    * *Note: The private `Write API Key` required for sending data is stored securely in the `config.py` file and is not exposed in this public documentation.*
+    * *Note 2: We added a check so that if a sensor has a critical error, we skip sending data to maintain data integrity.*
 
 
 6.  **Repeat:** Finally, it turns off the LEDs, waits a moment, and starts the whole cycle over again.
+
+
+
 
 ### 3.3 Software Flowcharts
 
