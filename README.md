@@ -320,7 +320,7 @@ Below is the project poster summarizing the concept, design, and value propositi
 * **Documentation & Datasheets:**
     * **MicroPython Documentation:** https://docs.micropython.org/
     * **ESP32 Pinout Reference:** Espressif Systems documentation.
-    * **Sensor Datasheets:** Used for timing and calibration (DHT12, MQ-135, GP2Y10/SDS011).
+    * **Sensor Datasheets:** Used for timing and calibration (DHT12, MQ-135, GP2Y10).
 * **Development Tools:**
     * **IDE:** Thonny IDE.
     * **Diagramming:** [Draw.io](https://www.drawio.com/) (used for flowcharts) and [EasyEDA](https://easyeda.com/es) (used for wiring diagrams).
