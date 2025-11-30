@@ -203,7 +203,7 @@ Below are the flowcharts illustrating the logic for the main program and specifi
   <summary>▶️ <strong>Click here to expand the Flowchart of the main program</strong></summary>
   <br>
   <p align="center">
-    <img src="https://github.com/user-attachments/assets/203762f3-a349-46bd-b811-794114ea5cb6" alt="Main program Flowchart" width="800">
+    <img src="https://github.com/user-attachments/assets/213ebae0-c145-41c1-9281-2f38a84200a4" alt="Main program Flowchart" width="800">
     <br>
     <em>Logic for the main program</em>
   </p>
@@ -259,7 +259,6 @@ Below are the flowcharts illustrating the logic for the main program and specifi
     <em>Logic for Particles Processing</em>
   </p>
 </details>
-
 
 
 ---
@@ -338,7 +337,3 @@ Below is the project poster summarizing the concept, design, and value propositi
 ---
 
 
-
-
-
-...
