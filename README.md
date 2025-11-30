@@ -4,7 +4,8 @@
 * [2. Hardware Components](#2-hardware-components)
 * [3. Software description](#3-software-description)
 * [4. Instructions and photos](#4-instructions-and-photos)
-* [5. References and tools](#5-references-and-tools)
+* [5. Project poster](#5-project-poster)
+* [6. References and tools](#6-references-and-tools)
 
 ## Project 1: ESP32 Indoor Air Quality Monitor
 Course: BPA-DE2 (Digital Electronics) 2025/26 Team 4, Members:
@@ -104,9 +105,10 @@ This section details the hardware selected for the prototype, justifications, an
 The following diagram shows how all components are connected to the ESP32 FireBeetle microcontroller.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/8bb77021-7ce6-46e1-b73e-c4bcd403c7c1" alt="Circuit Wiring Diagram" width="700">
+  <img src="https://github.com/user-attachments/assets/76b5f611-0f84-4688-a067-f571cc7d533b" alt="Circuit Wiring Diagram" width="700">
   <br>
   <em>Figure 2: Complete System Wiring Diagram.</em>
+
 
   ### Pinout Table (Connection Scheme)
 
@@ -296,7 +298,7 @@ To be able to replicate and run this project you have to follow the next steps:
 
 ---
 
-## 5. Project Pitch Poster
+## 5. Project Poster
 
 Below is the project poster summarizing the concept, design, and value proposition of the Indoor Air Quality Monitor.
 
@@ -310,14 +312,19 @@ Below is the project poster summarizing the concept, design, and value propositi
 
 ---
 
-## 6. References & Tools
+## 6. References and Tools
 
-* **MicroPython Documentation:** https://docs.micropython.org/
-* **ESP32 Pinout Reference:** Espressif Systems documentation.
-* **Sensor Datasheets:** DHT12, MQ-135, GP2Y10/SDS011 datasheets.
-* **Development IDE:** Thonny IDE.
-* **Diagramming Tools:** https://www.drawio.com/ used for flowcharts, https://easyeda.com/es used for wiring diagrams.
-  
+
+* **Project Guide / Course Material:**
+    * **Professor's GitHub Repository:** [GitHub](https://github.com/tomas-fryza/esp-micropython) - Used as a reference guide for project structure and code examples.
+* **Documentation & Datasheets:**
+    * **MicroPython Documentation:** https://docs.micropython.org/
+    * **ESP32 Pinout Reference:** Espressif Systems documentation.
+    * **Sensor Datasheets:** Used for timing and calibration (DHT12, MQ-135, GP2Y10/SDS011).
+* **Development Tools:**
+    * **IDE:** Thonny IDE.
+    * **Diagramming:** [Draw.io](https://www.drawio.com/) (used for flowcharts) and [EasyEDA](https://easyeda.com/es) (used for wiring diagrams).
+
 ---
 
 
