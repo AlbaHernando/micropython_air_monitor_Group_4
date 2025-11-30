@@ -131,20 +131,21 @@ To make the software easy to manage and understand, we wrote it in MicroPython a
 
 The source code is organized into a main controller script in the root directory and specific sensor/helper libraries in a `/lib` subdirectory.
 
-```/ (Root Directory)
-    │
-    ├─ main.py     # The central coordinator script.
-    ├── config.py  # Contains credentials (WiFi SSID/Pass, API URL).
-    └── lib/ # Custom libraries folder
-        ├── TandH.py       # Logic for Temperature & Humidity analysis.
-        ├── CO2.py         # Logic for MQ-135 reading and analysis.
-        ├── particule.py   # Logic for Particle sensor reading sequence.
-        ├── wifi_utils.py  # Helper functions for managing Wi-Fi connection.
-        ├── dht12.py       # Hardware driver for DHT12 sensor.
-        └── sh1106.py      # Hardware driver for OLED display.
+
 ```
-
-
+/ (Root Directory)
+│
+├── main.py          # The central coordinator script.
+├── config.py        # Contains credentials (WiFi SSID/Pass, API URL).
+│
+└── /lib             # Custom libraries folder
+    ├── TandH.py         # Logic for Temperature & Humidity analysis.
+    ├── CO2.py           # Logic for MQ-135 reading and analysis.
+    ├── particule.py     # Logic for Particle sensor reading sequence.
+    ├── wifi_utils.py    # Helper functions for managing Wi-Fi connection.
+    ├── dht12.py         # Hardware driver for DHT12 sensor.
+    └── sh1106.py        # Hardware driver for OLED display.
+```
 
 
 
