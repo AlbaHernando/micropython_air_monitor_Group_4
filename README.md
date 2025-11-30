@@ -285,7 +285,7 @@ To be able to replicate and run this project you have to follow the next steps:
 
 ### 4.2 Photographs and the video of the final project
 
-<h2 align="center">1. Prototype Demonstration Video</h2>
+<h2 align="center">Prototype Demonstration Video</h2>
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=PON_AQUI_EL_ID_DE_TU_VIDEO_DE_YOUTUBE" target="_blank">
