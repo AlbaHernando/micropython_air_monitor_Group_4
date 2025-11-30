@@ -277,6 +277,16 @@ To be able to replicate and run this project you have to follow the next steps:
 
 3.  **File Upload:** Upload all files from this repository to the ESP32, maintaining the exact directory structure.
 
+     To obtain the complete source code (including `main.py`, `config.py`, and the full `/lib` folder) at once, download the entire repository as a ZIP archive:
+
+    1.  Click the green **"<> Code"** button at the top of this page.
+    2.  Select **"Download ZIP"**.
+
+     Once unzipped, the directory structure is ready to be uploaded to the ESP32.
+
+### 4.2 Downloaded File Structure
+
+After unzipping, the downloaded folder will contain the following structured files, which are the core of the project. You can click on the file names below to view their contents directly on GitHub:
 
 4.  **Configuration:** Edit the `config.py` file on the ESP32 to enter your local Wi-Fi SSID, Password, and your Cloud API Endpoint URL. **This step is crucial so that the microcontroller is able to connect to Wi-Fi and Cloud and it operates correctly. Make sure not to forget it.**
 
