@@ -51,7 +51,7 @@ This section details the hardware selected for the prototype, justifications, an
       <em>Main Controller (ESP32 FireBeetle)</em>
     </td>
     <td align="center" width="33%">
-      <img src="https://github.com/user-attachments/assets/b87f8879-f5fa-497d-8490-917ca713a047" alt="DHT12 Sensor" width="95%">
+      <img src="https://github.com/user-attachments/assets/fa5785cd-92cb-44ee-b49f-aebd6102ea6b" alt="DHT12 Sensor" width="95%">
       <br>
       <em>Temp & Humidity Sensor (DHT12)</em>
     </td>
@@ -283,9 +283,6 @@ To be able to replicate and run this project you have to follow the next steps:
 
      Once unzipped, the directory structure is ready to be uploaded to the ESP32.
 
-### 4.2 Downloaded File Structure
-
-After unzipping, the downloaded folder will contain the following structured files, which are the core of the project. You can click on the file names below to view their contents directly on GitHub:
 
 4.  **Configuration:** Edit the `config.py` file on the ESP32 to enter your local Wi-Fi SSID, Password, and your Cloud API Endpoint URL. **This step is crucial so that the microcontroller is able to connect to Wi-Fi and Cloud and it operates correctly. Make sure not to forget it.**
 
