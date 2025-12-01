@@ -309,12 +309,13 @@ To be able to replicate and run this project you have to follow the next steps:
 Below is the project poster summarizing the concept, design, and value proposition of the Indoor Air Quality Monitor.
 
 <p align="center">
-  <a href="PON_AQUI_EL_ENLACE_AL_ARCHIVO_DE_TU_POSTER_EN_GITHUB" target="_blank">
-    <img src="PON_AQUI_EL_ENLACE_A_LA_IMAGEN_DE_TU_POSTER_EN_GITHUB" alt="Project Poster Thumbnail" width="800" style="border: 2px solid #ddd; border-radius: 4px; padding: 5px;">
+  <a href="https://github.com/user-attachments/assets/5ae3c96d-0fbb-42ed-bd44-16192acf8a6b" target="_blank">
+    <img src="https://github.com/user-attachments/assets/5ae3c96d-0fbb-42ed-bd44-16192acf8a6b" alt="Project Poster Thumbnail" width="800" style="border: 2px solid #ddd; border-radius: 4px; padding: 5px;">
   </a>
   <br>
   <em>Click on the image to view the full-size poster.</em>
 </p>
+
 
 ---
 
