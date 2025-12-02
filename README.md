@@ -182,7 +182,6 @@ The `main.py` script runs a continuous loop following the next steps in order:
         | **Field 2** | Humidity | % |
         | **Field 3** | CO2 Proxy Value | Voltage |
         | **Field 4** | Particle Sensor Value | Voltage |
-        | **Field 5** | Global System Status | String (e.g., "IDEAL") |
     * **Live Demo:** You can view the real-time data streaming to our public ThingSpeak dashboard here: **[https://api.thingspeak.com/update]**
     * *Note: The private `Write API Key` required for sending data is stored securely in the `config.py` file and is not exposed in this public documentation.*
     * *Note 2: We added a check so that if a sensor has a critical error, we skip sending data to maintain data integrity.*
