@@ -8,7 +8,7 @@
 * [6. References and tools](#6-references-and-tools)
 
 ## Project 1: ESP32 Indoor Air Quality Monitor
-Course: BPA-DE2 (Digital Electronics) 2025/26 Team 4, Members:
+Course: BPA-DE2 (Digital Electronics) 2025/26 Group 4, Members:
 
 - **Xabier Asla:** Responsible for 
 - **Alba Hernando:** Responsible for 
@@ -105,11 +105,10 @@ This section details the hardware selected for the prototype, justifications, an
 The following diagram shows how all components are connected to the ESP32 FireBeetle microcontroller.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/76b5f611-0f84-4688-a067-f571cc7d533b" alt="Circuit Wiring Diagram" width="700">
+  <img src="https://github.com/user-attachments/assets/2bc8a9d3-db7c-4a56-b492-76780e6b36fc" alt="Circuit Wiring Diagram" width="700">
   <br>
   <em>Figure 2: Complete System Wiring Diagram.</em>
 
-  **Change the diagram Vcc for 3V3**
 
   ### Pinout Table (Connection Scheme)
 
