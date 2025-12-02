@@ -109,6 +109,7 @@ The following diagram shows how all components are connected to the ESP32 FireBe
   <br>
   <em>Figure 2: Complete System Wiring Diagram.</em>
 
+  **Change the diagram Vcc for 3V3**
 
   ### Pinout Table (Connection Scheme)
 
@@ -125,7 +126,7 @@ The following diagram shows how all components are connected to the ESP32 FireBe
 | **Red LED** | Anode (+) | **27** | Digital Output |
 | **Yellow LED** | Anode (+) | **26** | Digital Output |
 | **Green LED** | Anode (+) | **25** | Digital Output |
-| **Power** | VCC/VDD | 3V3 / 5V | Power Supply |
+| **Power** | VCC/VDD | 3V3 | Power Supply |
 | **Ground** | GND | GND | Common Ground |
 ---
 
