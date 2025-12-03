@@ -10,9 +10,9 @@
 ## Project 1: ESP32 Indoor Air Quality Monitor
 Course: BPA-DE2 (Digital Electronics) 2025/26 Group 4, Members:
 
-- **Xabier Asla:** Responsible for 
-- **Alba Hernando:** Responsible for 
-- **Pablo Vicente:** Responsible for 
+- **Xabier Asla:** Responsible for the Particles and CO2 Flowcharts and codes, Video and the Poster.
+- **Alba Hernando:** Responsible for the Temperature and Humidity flowcharts and code, Github, Video and the Poster.
+- **Pablo Vicente:** Responsible for the Main flowchart and code, Video and the Poster.
 ---
 ## 1. Project Overview
 **Problem Statement**
@@ -293,14 +293,15 @@ To be able to replicate and run this project you have to follow the next steps:
 <h2 align="center">Prototype Demonstration Video</h2>
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=PON_AQUI_EL_ID_DE_TU_VIDEO_DE_YOUTUBE" target="_blank">
-    <img src="https://img.youtube.com/vi/PON_AQUI_EL_ID_DE_TU_VIDEO_DE_YOUTUBE/maxresdefault.jpg" 
+  <a href="https://www.youtube.com/watch?v=XB2OvYOXT5I" target="_blank">
+    <img src="https://www.youtube.com/watch?v=XB2OvYOXT5I" 
          alt="Watch the video demonstration" width="700" border="10" />
   </a>
   <br>
   <em>Video demonstration showing the functionality and operation of our Indoor Air Quality Monitor prototype.</em>
 </p>
-
+https://www.youtube.com/watch?v=PON_AQUI_EL_ID_DE_TU_VIDEO_DE_YOUTUBE
+https://youtu.be/XB2OvYOXT5I
 ---
 
 ## 5. Project Pitch Poster
@@ -308,12 +309,13 @@ To be able to replicate and run this project you have to follow the next steps:
 Below is the project poster summarizing the concept, design, and value proposition of the Indoor Air Quality Monitor.
 
 <p align="center">
-  <a href="https://github.com/user-attachments/assets/5ae3c96d-0fbb-42ed-bd44-16192acf8a6b" target="_blank">
-    <img src="https://github.com/user-attachments/assets/5ae3c96d-0fbb-42ed-bd44-16192acf8a6b" alt="Project Poster Thumbnail" width="800" style="border: 2px solid #ddd; border-radius: 4px; padding: 5px;">
+  <a href="https://github.com/user-attachments/assets/9011e1d1-57a4-4afc-ba9b-8961e854da99" target="_blank">
+    <img src="https://github.com/user-attachments/assets/9011e1d1-57a4-4afc-ba9b-8961e854da99" alt="Project Poster Thumbnail" width="800" style="border: 2px solid #ddd; border-radius: 4px; padding: 5px;">
   </a>
   <br>
   <em>Click on the image to view the full-size poster.</em>
 </p>
+
 
 
 ---
