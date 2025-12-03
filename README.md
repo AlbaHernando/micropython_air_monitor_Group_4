@@ -260,7 +260,7 @@ Below are the flowcharts illustrating the logic for the main program and specifi
 </details>
 
 
----
+
 ## 4. Instructions and photos
 
 ### 4.1 Instructions
@@ -300,6 +300,7 @@ To be able to replicate and run this project you have to follow the next steps:
            alt="Watch the Demo Video" width="700" style="border: 2px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
    </a>
 </p>
+
 ---
 
 ## 5. Project Pitch Poster
@@ -307,12 +308,13 @@ To be able to replicate and run this project you have to follow the next steps:
 Below is the project poster summarizing the concept, design, and value proposition of the Indoor Air Quality Monitor.
 
 <p align="center">
-  <a href="https://github.com/user-attachments/assets/9011e1d1-57a4-4afc-ba9b-8961e854da99" target="_blank">
-    <img src="https://github.com/user-attachments/assets/9011e1d1-57a4-4afc-ba9b-8961e854da99" alt="Project Poster Thumbnail" width="800" style="border: 2px solid #ddd; border-radius: 4px; padding: 5px;">
+  <a href="https://github.com/user-attachments/assets/81a77aae-5e45-47b4-9f4e-c1e391f9cca9" target="_blank">
+    <img src="https://github.com/user-attachments/assets/81a77aae-5e45-47b4-9f4e-c1e391f9cca9" alt="Project Poster Thumbnail" width="800">
   </a>
   <br>
   <em>Click on the image to view the full-size poster.</em>
 </p>
+
 
 
 
