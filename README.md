@@ -290,18 +290,16 @@ To be able to replicate and run this project you have to follow the next steps:
 
 ### 4.2 Photographs and the video of the final project
 
-<h2 align="center">Prototype Demonstration Video</h2>
+<h2 align="center">🎥 Project Demonstration Video</h2>
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=XB2OvYOXT5I" target="_blank">
-    <img src="https://www.youtube.com/watch?v=XB2OvYOXT5I" 
-         alt="Watch the video demonstration" width="700" border="10" />
-  </a>
-  <br>
-  <em>Video demonstration showing the functionality and operation of our Indoor Air Quality Monitor prototype.</em>
+   Click the image below to watch the system in action:
+   <br><br>
+   <a href="https://www.youtube.com/watch?v=XB2OvYOXT5I" target="_blank">
+      <img src="https://img.youtube.com/vi/XB2OvYOXT5I/maxresdefault.jpg" 
+           alt="Watch the Demo Video" width="700" style="border: 2px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+   </a>
 </p>
-https://www.youtube.com/watch?v=PON_AQUI_EL_ID_DE_TU_VIDEO_DE_YOUTUBE
-https://youtu.be/XB2OvYOXT5I
 ---
 
 ## 5. Project Pitch Poster
