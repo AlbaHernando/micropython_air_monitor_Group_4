@@ -261,7 +261,7 @@ Below are the flowcharts illustrating the logic for the main program and specifi
 
 
 
-## 4. Instructions and photos
+## 4. Instructions and video
 
 ### 4.1 Instructions
 
@@ -288,7 +288,7 @@ To be able to replicate and run this project you have to follow the next steps:
 
 5.  **Execution:** Reset the ESP32. The `main.py` script should run automatically. The Green LED will light up initially, followed by Wi-Fi connection status on the OLED screen, and then the main measurement loop will begin.
 
-### 4.2 Photographs and the video of the final project
+### 4.2 The video of the final project
 
 <h2 align="center">🎥 Project Demonstration Video</h2>
 
